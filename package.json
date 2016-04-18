@@ -1,0 +1,40 @@
+{
+  "name": "@tetris/db-adpeek",
+  "version": "0.0.0",
+  "description": "adpeek db migration & seed",
+  "main": "index",
+  "bin": {
+    "db-adpeek": "bin/cmd.js"
+  },
+  "scripts": {
+    "knex": "knex",
+    "create": "bin/cmd.js db:create",
+    "migrate": "bin/cmd.js db:migrate",
+    "seed": "bin/cmd.js db:seed"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "migrations",
+    "seeds",
+    "index.js",
+    "knexfile.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tetris-solutions/db-adpeek.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tetris-solutions/db-adpeek/issues"
+  },
+  "homepage": "https://github.com/tetris-solutions/db-adpeek#readme",
+  "dependencies": {
+    "@tetris/serialize-error": "^1.0.0",
+    "knex": "^0.10.0",
+    "lodash": "^4.11.1",
+    "pg": "^4.5.3",
+    "uuid": "^2.0.2",
+    "winston": "^2.2.0",
+    "winston-logstash": "^0.2.11"
+  }
+}
