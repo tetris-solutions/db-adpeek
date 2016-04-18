@@ -37,7 +37,7 @@ exports.up = function (knex, Promise) {
       table.uuid('workspace_account')
         .references('id')
         .inTable('workspace_account')
-        .onDelete('restrict')
+        .onDelete('cascade')
         .onUpdate('restrict')
         .notNullable()
       table.timestamp('creation').notNullable().defaultTo(knex.fn.now())
