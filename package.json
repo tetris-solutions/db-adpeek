@@ -1,6 +1,6 @@
 {
   "name": "@tetris/db-adpeek",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "adpeek db migration & seed",
   "main": "index",
   "bin": {
