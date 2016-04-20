@@ -2,6 +2,11 @@
   "name": "@tetris/db-adpeek",
   "version": "0.0.4",
   "description": "adpeek db migration & seed",
+  "engineStrict": true,
+  "engines": {
+    "npm": ">=3.0.0",
+    "node": ">=4.0.0"
+  },
   "main": "index",
   "bin": {
     "db-adpeek": "bin/cmd.js"
