@@ -60,6 +60,13 @@ exports.up = function (knex, Promise) {
         .onUpdate('restrict')
         .notNullable()
 
+      table.uuid('workspace_account')
+        .references('id')
+        .inTable('workspace_account')
+        .onDelete('cascade')
+        .onUpdate('restrict')
+        .notNullable()
+
       table.timestamp('creation').notNullable().defaultTo(knex.fn.now())
     })
     .createTable('campaign', function (table) {
@@ -69,13 +76,6 @@ exports.up = function (knex, Promise) {
       table.uuid('folder')
         .references('id')
         .inTable('folder')
-        .onDelete('restrict')
-        .onUpdate('restrict')
-        .notNullable()
-
-      table.uuid('workspace_account')
-        .references('id')
-        .inTable('workspace_account')
         .onDelete('restrict')
         .onUpdate('restrict')
         .notNullable()
