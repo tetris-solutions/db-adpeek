@@ -1,14 +1,14 @@
 exports.up = function (knex, Promise) {
   return knex.schema
-    .createTable('midia', function (table) {
+    .createTable('media', function (table) {
       table.string('id', 20).primary()
       table.string('name', 30).notNullable()
       table.timestamp('creation').notNullable().defaultTo(knex.fn.now())
     })
     .table('folder', function (table) {
-      table.string('midia', 20)
+      table.string('media', 20)
         .references('id')
-        .inTable('midia')
+        .inTable('media')
         .onDelete('restrict')
         .onUpdate('restrict')
         .notNullable()
@@ -18,8 +18,10 @@ exports.up = function (knex, Promise) {
 }
 
 exports.down = function (knex, Promise) {
-  return knex.schema.table('folder', function (table) {
-    table.dropColumn('tag')
-    table.dropColumn('midia')
-  })
+  return knex.schema
+    .table('folder', function (table) {
+      table.dropColumn('tag')
+      table.dropColumn('media')
+    })
+    .dropTable('media')
 }
