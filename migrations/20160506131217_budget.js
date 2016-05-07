@@ -28,10 +28,6 @@ exports.up = function (knex, Promise) {
 
       table.timestamp('creation').notNullable().defaultTo(knex.fn.now())
     })
-    .raw(
-      'ALTER TABLE "campaign" ' +
-      'DROP CONSTRAINT "campaign_folder_fkey", ' +
-      'ADD FOREIGN KEY ("folder") REFERENCES "folder" ("id") ON DELETE CASCADE ON UPDATE RESTRICT')
     .table('campaign', function (table) {
       table.uuid('budget')
         .references('id')
