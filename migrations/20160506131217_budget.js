@@ -32,7 +32,7 @@ exports.up = function (knex, Promise) {
       table.uuid('budget')
         .references('id')
         .inTable('budget')
-        .onDelete('cascade')
+        .onDelete('set null')
         .onUpdate('restrict')
     })
 }
