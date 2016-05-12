@@ -76,7 +76,7 @@ exports.up = function (knex, Promise) {
       table.uuid('folder')
         .references('id')
         .inTable('folder')
-        .onDelete('restrict')
+        .onDelete('cascade')
         .onUpdate('restrict')
         .notNullable()
 
