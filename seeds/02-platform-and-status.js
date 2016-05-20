@@ -73,6 +73,7 @@ var statuses = [
     id: uuid(),
     name: 'PENDING',
     platform: 'adwords',
+    is_active: true,
     description: {
       en: 'The campaign start date has not yet been reached',
       'pt-BR': 'A data de ínicio da campanha ainda não foi atingida'
