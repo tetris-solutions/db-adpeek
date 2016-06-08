@@ -1,4 +1,4 @@
-var campaignView = `
+var campaignView = exports.campaignView = `
 CREATE VIEW "v_campaign" AS
 select 
   campaign.*,
