@@ -9,7 +9,7 @@ exports.up = function (knex, Promise) {
       function (table) {
         table.uuid('id').primary()
 
-        table.string('company', 40)
+        table.uuid('company')
           .notNullable()
 
         table.uuid('workspace')
