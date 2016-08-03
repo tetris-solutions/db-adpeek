@@ -61,6 +61,8 @@ exports.up = function (knex, Promise) {
         .onUpdate('restrict')
         .notNullable()
 
+      table.unique(['report', 'module'])
+
       table.smallint('index')
         .unsigned()
         .notNullable()
@@ -85,6 +87,8 @@ exports.up = function (knex, Promise) {
         .onDelete('cascade')
         .onUpdate('restrict')
         .notNullable()
+
+      table.unique(['report', 'folder', 'user'])
 
       table.uuid('user')
 
