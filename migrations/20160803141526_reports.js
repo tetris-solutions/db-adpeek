@@ -61,6 +61,10 @@ exports.up = function (knex, Promise) {
         .onUpdate('restrict')
         .notNullable()
 
+      table.smallint('index')
+        .unsigned()
+        .notNullable()
+
       table.timestamp('creation')
         .notNullable()
         .defaultTo(knex.fn.now())
