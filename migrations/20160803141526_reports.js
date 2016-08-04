@@ -16,6 +16,8 @@ exports.up = function (knex, Promise) {
           .onDelete('restrict')
           .onUpdate('restrict')
 
+        table.uuid('owner')
+
         table.timestamp('creation')
           .notNullable()
           .defaultTo(knex.fn.now())
@@ -88,7 +90,7 @@ exports.up = function (knex, Promise) {
         .onUpdate('restrict')
         .notNullable()
 
-      table.unique(['report', 'folder', 'user'])
+      table.unique(['folder', 'user'])
 
       table.uuid('user')
 
