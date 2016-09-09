@@ -90,6 +90,15 @@ var statuses = [
   },
   {
     id: uuid(),
+    name: 'DISABLED',
+    platform: 'adwords',
+    description: {
+      en: 'The video campaign has been disabled',
+      'pt-BR': 'A campanha de vídeo foi desabilitada'
+    }
+  },
+  {
+    id: uuid(),
     name: 'ACTIVE',
     is_active: true,
     platform: 'facebook',
