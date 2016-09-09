@@ -1,3 +1,5 @@
+var campaignView = require('./20160601122225_vCampaign').campaignView
+
 exports.up = function (knex, Promise) {
   return knex.schema
     .table('campaign', function (table) {
@@ -5,6 +7,8 @@ exports.up = function (knex, Promise) {
         .notNullable()
         .defaultTo(false)
     })
+    .raw('DROP VIEW v_campaign;')
+    .raw(campaignView)
 }
 
 exports.down = function (knex, Promise) {
