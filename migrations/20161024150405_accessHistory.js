@@ -44,7 +44,7 @@ exports.up = function (knex, Promise) {
         .notNullable()
         .defaultTo(knex.fn.now())
 
-      table.primary(['level', 'target'])
+      table.primary(['target', 'user'])
       table.index('timestamp')
     })
 }
