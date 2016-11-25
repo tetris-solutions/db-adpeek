@@ -18,7 +18,9 @@ exports.seed = function (knex, Promise) {
           'view_rate',
           'engagement',
           'view',
-          'fan'
+          'fan',
+          'cpa',
+          'roas'
         ].map(kpi)),
       knex('kpi_name').del(),
       knex('media_kpi').del()
@@ -43,7 +45,9 @@ exports.seed = function (knex, Promise) {
     view_rate: ['View rate', 'Taxa de visualização'],
     engagement: ['Engagement', 'Engajamento'],
     view: ['Views', 'Visualizações'],
-    fan: ['Fans', 'Fãs']
+    fan: ['Fans', 'Fãs'],
+    cpa: ['Cost Per Acquisition', 'Custo Por Aquisição'],
+    roas: ['ROAS', 'ROAS']
   }
 
   var mediaKpis = {
@@ -71,6 +75,10 @@ exports.seed = function (knex, Promise) {
       'fan',
       'click',
       'conversion'
+    ],
+    performance: [
+      'roas',
+      'cpa'
     ]
   }
 
