@@ -47,7 +47,7 @@ exports.seed = function (knex, Promise) {
     view: ['Views', 'Visualizações'],
     fan: ['Fans', 'Fãs'],
     cpa: ['Cost Per Acquisition', 'Custo Por Aquisição'],
-    roas: ['ROAS', 'ROAS']
+    roas: ['Return Over Average Spent', 'ROAS']
   }
 
   var mediaKpis = {
