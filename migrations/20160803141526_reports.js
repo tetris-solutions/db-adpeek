@@ -1,3 +1,31 @@
+var rModule = exports.report_module = function (table) {
+  table.uuid('id').primary()
+
+  table.uuid('report')
+    .references('id')
+    .inTable('report')
+    .onDelete('cascade')
+    .onUpdate('restrict')
+    .notNullable()
+
+  table.uuid('module')
+    .references('id')
+    .inTable('module')
+    .onDelete('cascade')
+    .onUpdate('restrict')
+    .notNullable()
+
+  table.unique(['report', 'module'])
+
+  table.smallint('index')
+    .unsigned()
+    .notNullable()
+
+  table.timestamp('creation')
+    .notNullable()
+    .defaultTo(knex.fn.now())
+}
+
 exports.up = function (knex, Promise) {
   return knex.schema
     .createTable('report',
@@ -46,33 +74,7 @@ exports.up = function (knex, Promise) {
         .notNullable()
         .defaultTo(knex.fn.now())
     })
-    .createTable('report_module', function (table) {
-      table.uuid('id').primary()
-
-      table.uuid('report')
-        .references('id')
-        .inTable('report')
-        .onDelete('cascade')
-        .onUpdate('restrict')
-        .notNullable()
-
-      table.uuid('module')
-        .references('id')
-        .inTable('module')
-        .onDelete('cascade')
-        .onUpdate('restrict')
-        .notNullable()
-
-      table.unique(['report', 'module'])
-
-      table.smallint('index')
-        .unsigned()
-        .notNullable()
-
-      table.timestamp('creation')
-        .notNullable()
-        .defaultTo(knex.fn.now())
-    })
+    .createTable('report_module', rModule)
     .createTable('report_folder', function (table) {
       table.uuid('id').primary()
 
