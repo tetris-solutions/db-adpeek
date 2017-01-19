@@ -22,16 +22,17 @@ exports.seed = function (knex, Promise) {
 
           // enabled
           'roas',
+          'cpa',
+          'view_rate',
+
           'ctr',
           'cpc',
           'cpv',
           'cpv100',
-          'cpa',
           'cpf',
           'cpe',
-          'cpr',
-          'view_rate'
-        ].map()),
+          'cpr'
+        ].map(kpi)),
       knex('kpi_name').del(),
       knex('media_kpi').del()
     )
