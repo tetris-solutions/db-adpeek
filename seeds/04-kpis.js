@@ -66,7 +66,7 @@ exports.seed = function (knex, Promise) {
     cpe: ['Cost Per Engagement', 'Custo Por Engajamento'],
     cpr: ['Cost Per Reach', 'Custo Por Alcance'],
     view_rate: ['View rate', 'Taxa de visualização'],
-    cpa: ['Cost Per Acquisition', 'Custo Por Aquisição'],
+    cpa: ['Cost Per Acquisition', 'Custo Por Conversão'],
     roas: ['Return Over Average Spent', 'Return Over Average Spent']
   }
 
