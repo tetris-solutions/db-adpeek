@@ -58,7 +58,7 @@ exports.up = function (knex, Promise) {
       table.string('kpi', 30)
         .references('id')
         .inTable('kpi')
-        .onDelete('cascade')
+        .onDelete('restrict')
         .onUpdate('restrict')
         .notNullable()
     })
