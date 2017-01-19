@@ -12,16 +12,26 @@ exports.seed = function (knex, Promise) {
       knex('kpi').del(),
       knex('kpi')
         .insert([
-          'click',
-          'reach',
-          'conversion',
-          'view_rate',
-          'engagement',
-          'view',
-          'fan',
+          /* disabled
+           'click',
+           'reach',
+           'conversion',
+           'engagement',
+           'view',
+           'fan', */
+
+          // enabled
+          'roas',
+          'ctr',
+          'cpc',
+          'cpv',
+          'cpv100',
           'cpa',
-          'roas'
-        ].map(kpi)),
+          'cpf',
+          'cpe',
+          'cpr',
+          'view_rate'
+        ].map()),
       knex('kpi_name').del(),
       knex('media_kpi').del()
     )
@@ -39,46 +49,70 @@ exports.seed = function (knex, Promise) {
 
   var locales = ['en', 'pt-BR']
   var kpiNames = {
-    click: ['Clicks', 'Cliques'],
-    reach: ['Reach', 'Alcance'],
-    conversion: ['Conversions', 'Conversões'],
+    /*
+     click: ['Clicks', 'Cliques'],
+     reach: ['Reach', 'Alcance'],
+     conversion: ['Conversions', 'Conversões'],
+     engagement: ['Engagement', 'Engajamento'],
+     view: ['Views', 'Visualizações'],
+     fan: ['Fans', 'Fãs'],*/
+
+    ctr: ['Click Through Rate', 'Click Through Rate'],
+    cpc: ['Cost Per Click', 'Custo Por Clique'],
+    cpv: ['Cost Per Video View', 'Custo Por Video View'],
+    cpv100: ['Cost Per Full Video View', 'Custo por 100% Video View'],
+    cpf: ['Cost Per Fan', 'Custo Por Fã'],
+    cpe: ['Cost Per Engagement', 'Custo Por Engajamento'],
+    cpr: ['Cost Per Reach', 'Custo Por Alcance'],
     view_rate: ['View rate', 'Taxa de visualização'],
-    engagement: ['Engagement', 'Engajamento'],
-    view: ['Views', 'Visualizações'],
-    fan: ['Fans', 'Fãs'],
     cpa: ['Cost Per Acquisition', 'Custo Por Aquisição'],
-    roas: ['Return Over Average Spent', 'ROAS']
+    roas: ['Return Over Average Spent', 'Return Over Average Spent']
   }
 
   var mediaKpis = {
     display: [
-      'reach',
-      'click',
-      'conversion'
+      'ctr',
+      'cpc',
+      // 'reach',
+      // 'click',
+      // 'conversion'
     ],
     search: [
-      'click',
-      'conversion',
-      'view_rate'
+      'ctr',
+      'cpc',
+      'cpa'
+      // 'click',
+      // 'conversion',
+      // 'view_rate'
     ],
     video: [
-      'engagement',
-      'view',
-      'click',
-      'reach',
-      'conversion'
+      'cpv',
+      'cpv100',
+      'view_rate',
+      'cpe',
+      'cpc'
+      // 'engagement',
+      // 'view',
+      // 'click',
+      // 'reach',
+      // 'conversion'
     ],
     social: [
-      'reach',
-      'view',
-      'engagement',
-      'fan',
-      'click',
-      'conversion'
+      'cpf',
+      'cpc',
+      'cpe',
+      'cpr'
+      // 'reach',
+      // 'view',
+      // 'engagement',
+      // 'fan',
+      // 'click',
+      // 'conversion'
     ],
     performance: [
       'roas',
-      'cpa'
+      'cpa',
+      'cpc'
     ]
   }
 
