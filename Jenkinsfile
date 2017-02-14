@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Migrate') {
       steps {
-        sh 'npm run build-env .env && source bash.env && npm run migrate'
+        sh 'npm run build-env && source bash.env && npm run migrate'
       }
     }
   }
