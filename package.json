@@ -13,7 +13,6 @@
   },
   "scripts": {
     "knex": "knex",
-    "build-env": "build-env .env > bash.env",
     "create": "bin/cmd.js db:create",
     "migrate": "bin/cmd.js db:migrate",
     "seed": "bin/cmd.js db:seed"
@@ -35,8 +34,8 @@
   },
   "homepage": "https://github.com/tetris-solutions/db-adpeek#readme",
   "dependencies": {
-    "@tetris/build-env": "0.0.1",
     "@tetris/serialize-error": "^1.0.0",
+    "dotenv": "^4.0.0",
     "knex": "^0.10.0",
     "lodash": "^4.11.1",
     "pg": "^4.5.3",

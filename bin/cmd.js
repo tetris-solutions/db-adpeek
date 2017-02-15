@@ -23,6 +23,12 @@ var operations = {
   }
 }
 
+
+require('dotenv').config({
+  path: require('path').resolve(__dirname, '..', '.env'),
+  silent: true
+})
+
 if (operations[operation]) {
   operations[operation]()
 }

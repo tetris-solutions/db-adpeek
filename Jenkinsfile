@@ -17,9 +17,7 @@ pipeline {
     }
     stage('Migrate') {
       steps {
-        sh 'npm run build-env'
-        sh 'chmod +x bash.env'
-        sh './bash.env && npm run migrate'
+        sh 'npm run migrate'
       }
     }
   }
