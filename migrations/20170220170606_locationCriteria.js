@@ -1,13 +1,17 @@
 exports.up = function (knex, Promise) {
   return knex.schema
     .createTable('location_criteria', function (table) {
-      table.string('id', 20).primary()
-      table.string('name', 10).notNullable()
-      table.string('canonical_name', 50).notNullable()
-      table.string('parent_id', 10).index().notNullable()
-      table.string('country_code', 5).notNullable()
-      table.string('type', 20).notNullable()
-      table.string('status', 10).notNullable()
+      table.integer('id').unsigned().primary()
+
+      table.string('name', 100).notNullable()
+      table.string('canonical_name', 250).notNullable()
+
+      table.integer('parent_id').unsigned().index()
+
+      table.string('country_code', 2).notNullable()
+
+      table.string('type', 50).notNullable()
+      table.string('status', 50).notNullable()
     })
 }
 

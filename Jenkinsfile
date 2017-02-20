@@ -16,8 +16,15 @@ pipeline {
       }
     }
     stage('Migrate') {
+      when { environment name: 'DB_OP', value: 'migrate' }
       steps {
         sh 'npm run migrate'
+      }
+    }
+    stage('Seed') {
+      when { environment name: 'DB_OP', value: 'seed' }
+      steps {
+        sh 'npm run seed'
       }
     }
   }

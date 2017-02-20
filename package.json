@@ -35,6 +35,7 @@
   "homepage": "https://github.com/tetris-solutions/db-adpeek#readme",
   "dependencies": {
     "@tetris/serialize-error": "^1.0.0",
+    "csv-parser": "^1.11.0",
     "dotenv": "^4.0.0",
     "knex": "^0.10.0",
     "lodash": "^4.11.1",
