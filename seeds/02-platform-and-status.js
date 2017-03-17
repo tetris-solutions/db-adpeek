@@ -216,7 +216,8 @@ exports.seed = function (knex, Promise) {
     knex('platform').del(),
     knex('platform').insert({id: 'facebook', name: 'Facebook'}),
     knex('platform').insert({id: 'adwords', name: 'Google AdWords'}),
-    knex('platform').insert({id: 'twitter', name: 'Twitter'})
+    knex('platform').insert({id: 'twitter', name: 'Twitter'}),
+    knex('platform').insert({id: 'analytics', name: 'Google Analytics'})
   ]).then(function () {
     return Promise.all(map(statuses, insertStatus))
       .then(function () {
