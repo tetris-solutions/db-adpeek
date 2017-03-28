@@ -6,6 +6,16 @@ var assign = require('lodash/assign')
 var statuses = [
   {
     id: uuid(),
+    name: 'UNDEFINED',
+    is_active: true,
+    platform: 'analytics',
+    description: {
+      en: 'Undefined status',
+      'pt-BR': 'Status indefinido'
+    }
+  },
+  {
+    id: uuid(),
     name: 'UNKNOWN',
     platform: 'adwords',
     description: {
