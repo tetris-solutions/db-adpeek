@@ -3,5 +3,5 @@ exports.up = function (knex, Promise) {
 }
 
 exports.down = function (knex, Promise) {
-  return knex.schema.createTable('report_module', require('./20160803141526_reports').report_module)
+  return knex.schema.createTable('report_module', require('./20160803141526_reports').report_module.bind(null, knex))
 }

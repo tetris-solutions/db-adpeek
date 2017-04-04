@@ -1,4 +1,4 @@
-var rModule = exports.report_module = function (table) {
+var rModule = exports.report_module = function (knex, table) {
   table.uuid('id').primary()
 
   table.uuid('report')
@@ -74,7 +74,7 @@ exports.up = function (knex, Promise) {
         .notNullable()
         .defaultTo(knex.fn.now())
     })
-    .createTable('report_module', rModule)
+    .createTable('report_module', rModule.bind(null, knex))
     .createTable('report_folder', function (table) {
       table.uuid('id').primary()
 
