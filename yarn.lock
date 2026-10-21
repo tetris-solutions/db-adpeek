@@ -4,7 +4,7 @@
 
 "@tetris/serialize-error@^1.0.0":
   version "1.0.0"
-  resolved "http://registry.npmjs.org/@tetris/serialize-error/-/serialize-error-1.0.0.tgz#550ad7896444710158290fa0363ac2d72824876e"
+  resolved "https://registry.npmjs.org/@tetris/serialize-error/-/serialize-error-1.0.0.tgz#550ad7896444710158290fa0363ac2d72824876e"
   dependencies:
     lodash "^4.6.1"
 
@@ -433,9 +433,9 @@ util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
-uuid@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
+uuid@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-14.0.0.tgz#0af883220163d264ffe0c084f6b8a89b9666966d"
 
 v8flags@^2.0.2:
   version "2.0.11"
